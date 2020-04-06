@@ -1,0 +1,29 @@
+.Button {
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+  padding: .5rem;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  font-family: 'Lato', sans-serif;
+  &:disabled {
+    background-color: #ccc;
+  }
+}
+
+.Submit {
+  color: dodgerblue;
+}
+
+.Success {
+  color: darkseagreen;
+}
+
+.Danger {
+  color: lightcoral;
+}

@@ -1,0 +1,12 @@
+.Error {
+  padding: .5rem;
+  position: relative;
+  border: 1px solid red;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 300;
+  p {
+    font-size: .6rem;
+    margin: 0;
+  };
+}

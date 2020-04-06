@@ -1,0 +1,15 @@
+.NavButton {
+  list-style: none;
+  a {
+    text-align: center;
+    display: block;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    padding: .5rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+}

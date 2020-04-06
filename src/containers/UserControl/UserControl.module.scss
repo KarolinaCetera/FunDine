@@ -1,0 +1,56 @@
+.UserControl {
+  height: 90%;
+  width: 90%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: .1rem solid #e7e7e7;
+  border-radius: 5px;
+  box-shadow: 0 0 16px -3px rgba(0,0,0,0.28);
+  font-weight: 300;
+  h2 {
+    margin: .5rem 0;
+    font-size: 1.8rem;
+    text-align: center;
+    letter-spacing: .2rem;
+    .Active {
+      display: block;
+    }
+    .NotActive {
+      display: none;
+    }
+  }
+  p {
+    margin: .5rem 0;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 400;
+  }
+  label {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (min-height: 1024px) and (max-height: 1366px) {
+  .UserControl {
+    height: 60%;
+    width: 50%;
+    margin-top: 3rem;
+    h2 {
+      font-size: 3rem;
+    }
+    input {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .UserControl {
+    height: 80%;
+    width: 40%;
+  }
+}

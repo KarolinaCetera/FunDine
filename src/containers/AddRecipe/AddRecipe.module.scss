@@ -1,0 +1,283 @@
+.Recipe {
+  max-width: 95%;
+  font-weight: 300;
+  margin: 0 auto;
+  .RecipeEdition {
+    label {
+      display: none;
+    }
+    button {
+      font-weight: 300;
+    }
+  }
+  .RecipeForm {
+    h3 {
+      margin: 1rem 0;
+      font-size: 1.08rem;
+      letter-spacing: 1px;
+    }
+    form {
+      margin: 0 auto;
+      div {
+        padding: .2rem .5rem .4rem;
+        margin: 1rem 0;
+        div {
+          margin: 0;
+        }
+        &.RecipeName {
+          border: .1rem solid #e7e7e7;
+          border-radius: 5px;
+          box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
+        }
+        &.RecipeIngredient {
+          border: .1rem solid #e7e7e7;
+          border-radius: 5px;
+          box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
+          .IngredientDetails {
+            padding: 0;
+            display: flex;
+            align-items: flex-end;
+            div:first-of-type {
+              width: 70%;
+            }
+            .Plus {
+              display: block;
+              width: 2.1rem;
+              height: auto;
+            }
+          }
+          .Ingredients {
+            .Ingredient {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin: .3rem 0;
+              font-size: .8rem;
+              padding: .5rem 0;
+              border: .05rem solid #ebc2c1;
+              border-radius: 5px;
+              span {
+                width: 60%;
+                display: inline-block;
+                padding-left: .5rem;
+              }
+              .IngredientControls {
+                width: 40%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-end;
+                padding: 0;
+                img {
+                  width: 1.3rem;
+                  height: auto;
+                }
+              }
+            }
+          }
+        }
+        &.RecipeDescription {
+          border: .1rem solid #e7e7e7;
+          border-radius: 5px;
+          box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
+          textarea {
+            height: 6rem;
+          }
+        }
+      }
+      button {
+        width: 150px;
+        margin: 1rem auto;
+      }
+    }
+  }
+  .RecipeDisplay {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .Recipe {
+    width: 100%;
+    .RecipeEdition {
+      p {
+        font-size: 1.5rem;
+      }
+      input {
+        font-size: 1.5rem;
+      }
+      button {
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+    }
+    .RecipeForm {
+      h3 {
+        font-size: 2rem;
+      }
+      form {
+        div {
+          &.RecipeIngredient {
+            .IngredientDetails {
+              .Plus {
+                width: 3rem;
+              }
+            }
+            .Ingredients {
+              .Ingredient {
+                width: 50%;
+                font-size: 2rem;
+                .IngredientControls {
+                  img {
+                    width: 2.5rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+        button {
+          width: 300px;
+          font-size: 2.5em;
+        }
+      }
+    }
+    .RecipeDisplay {
+      display: none;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1199px){
+  .Recipe {
+    width: 100%;
+    .RecipeEdition {
+      p {
+        font-size: 2rem;
+      }
+      input {
+        font-size: 1.5rem;
+      }
+      button {
+        font-size: 2rem;
+        font-weight: 300;
+      }
+    }
+    .RecipeForm {
+      h3 {
+        margin: 2rem 0;
+        font-size: 3rem;
+      }
+      form {
+        div {
+          &.RecipeIngredient {
+            .IngredientDetails {
+              .Plus {
+                width: 3rem;
+              }
+            }
+            .Ingredients {
+              .Ingredient {
+                width: 50%;
+                font-size: 2.5rem;
+                .IngredientControls {
+                  img {
+                    width: 3rem;
+                  }
+                }
+              }
+            }
+          }
+          &.RecipeDescription {
+            textarea {
+              height: 12rem;
+            }
+          }
+        }
+        button {
+          width: 300px;
+          padding: 1rem;
+          font-size: 2.5rem;
+        }
+      }
+    }
+    .RecipeDisplay {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Recipe {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .RecipeEdition {
+      p {
+        font-size: 2rem;
+      }
+      input {
+        font-size: 1.5rem;
+      }
+      button {
+        font-size: 1.5rem;
+        font-weight: 300;
+        background-color: #fff;
+        border: none;
+      }
+    }
+    .RecipeForm {
+      width: 40%;
+      h3 {
+        font-size: 1.8rem;
+      }
+      form {
+        div {
+          &.RecipeIngredient {
+            .IngredientDetails {
+              div:first-of-type {
+                width: 90%;
+              }
+            }
+            .Ingredients {
+              .Ingredient {
+                font-size: 1.3rem;
+                span {
+                  width: 60%;
+                }
+                .IngredientControls {
+                  justify-content: space-evenly;
+                  width: 20%;
+                  img {
+                    width: 1.6rem;
+                    height: auto;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .RecipeDisplay {
+      display: block;
+      width: 50%;
+      margin: 4rem 0;
+      padding: 0 2rem;
+      h4 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+      ul {
+        margin: 1rem 0;
+        li {
+          margin: .5rem 0;
+        }
+      }
+      p {
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
+

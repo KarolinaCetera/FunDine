@@ -1,0 +1,132 @@
+.HomePage {
+  width: 100%;
+  .NewUser {
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .Logo {
+      margin: 2rem auto 0;
+      font-size: 3rem;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+    .Intro {
+      padding: 1rem 0;
+      font-size: 1.4rem;
+      font-weight: 300;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+  }
+  .Dashboard {
+    margin: 1rem auto;
+    width: 100%;
+    .Controls {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+        li {
+          width: 48%;
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2rem;
+            padding: .5rem 1.5rem;
+            font-size: 1.2rem;
+            text-align: center;
+          }
+        }
+    }
+    .UserPanel {
+      .Week {
+
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 321px) {
+  .HomePage {
+    .NewUser {
+      margin: 5rem auto;
+      .Intro {
+        padding: 2rem;
+        font-size: 1.7rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+ .HomePage {
+   width: 100%;
+   .Dashboard {
+     display: flex;
+     justify-content: space-between;
+     .Controls {
+       width: 25%;
+       justify-content: space-between;
+       align-items: center;
+       flex-direction: column;
+       li {
+         width: 90%;
+         margin: .5rem auto;
+         a {
+           padding: 1rem;
+           font-size: 1.5rem;
+         }
+       }
+     }
+     .UserPanel {
+       width: 75%;
+       border: 2px solid black;
+     }
+   }
+ }
+}
+
+@media screen and (min-width: 1024px) {
+  .HomePage {
+    .Dashboard {
+      .Controls {
+        border: 2px solid black;
+        .BoardButtons {
+          li {
+            width: 95%;
+            a {
+              height: 3.2rem;
+              font-size: 2rem;
+              padding: 1rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .HomePage {
+    height: 100%;
+    .Dashboard {
+      margin: 0 auto;
+      .Controls {
+        border: 2px solid black;
+        .BoardButtons {
+          justify-content: center;
+          li {
+            a {
+              width: 100%;
+              font-size: 2rem;
+              padding: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
