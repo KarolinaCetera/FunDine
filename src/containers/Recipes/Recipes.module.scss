@@ -44,12 +44,19 @@
 
 @media screen and (min-width: 1025px) {
   .Recipes {
+    overflow: hidden;
     h3 {
       margin: 1rem;
       font-size: 2rem;
+
+      position: fixed;
     }
     .RecipesContainer {
       justify-content: flex-start;
+      margin-top: 4rem;
+      position: relative;
+      height: 70vh;
+      overflow: auto;
     }
     .RecipeModal {
       .Details {

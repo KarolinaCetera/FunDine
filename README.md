@@ -8,6 +8,7 @@
 
 <h3>App under construction... But what's already made?</h3>
 <p>April 6th: adding recipe</p>
+<p>April 7th: displaying recipe</p>
 
 <h3>Technologies</h3>
 <ul>
