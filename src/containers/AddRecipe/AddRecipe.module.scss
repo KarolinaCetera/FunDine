@@ -212,6 +212,8 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+    position: relative;
     .RecipeEdition {
       p {
         font-size: 2rem;
@@ -261,8 +263,11 @@
     }
     .RecipeDisplay {
       display: block;
+      overflow: auto;
+      position: absolute;
+      top: 1rem;
+      left: 40%;
       width: 50%;
-      margin: 4rem 0;
       padding: 0 2rem;
       h4 {
         font-size: 2rem;

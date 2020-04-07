@@ -11,9 +11,7 @@ const AddRecipeModal = props => {
                 <Input
                     value={props.newIngredient}
                     elementType="text"
-                    changed={(e) => {
-                        this.setState({newIngredientValue: {...props.newIngredient, ingredientName: e.target.value}})
-                    }}
+                    changed={props.changed}
                 />
                 <button onClick={props.clickedCancel}>Cancel</button>
                 <button onClick={props.clickedSave}>Save</button>

@@ -7,3 +7,22 @@
   position: relative;
   top: 4rem;
 }
+
+@media screen and (min-width: 1025px) {
+  .Content {
+    &:after {
+      content: "";
+      height: 100vh;
+      width: 100%;
+      display: block;
+      background-image: url("https://image.flaticon.com/icons/svg/2413/2413004.svg");
+      background-repeat: no-repeat;
+      background-size: 60%;
+      position: fixed;
+      top: 350px;
+      left: 520px;
+      opacity: .2;
+      transform: rotate(33deg);
+    }
+  }
+}

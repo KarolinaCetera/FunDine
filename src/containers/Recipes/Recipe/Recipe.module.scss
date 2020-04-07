@@ -1,0 +1,55 @@
+.Recipe {
+  margin: 0 auto .7rem;
+  padding: .5rem;
+  width: 90%;
+  border: .1rem solid #e7e7e7;
+  border-radius: 5px;
+  box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  h4 {
+    width: 55%;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    letter-spacing: 1px;
+  }
+  div {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    img {
+      width: 2rem;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .Recipe {
+    width: 95%;
+    h4 {
+      font-size: 1.5rem;
+    }
+    div {
+      justify-content: flex-end;
+      img {
+        margin: 0 .5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .Recipe {
+    width: 45%;
+    margin: 0 0 .7rem;
+    div {
+      justify-content: flex-end;
+      img {
+        margin: 0 .5rem;
+      }
+    }
+  }
+}

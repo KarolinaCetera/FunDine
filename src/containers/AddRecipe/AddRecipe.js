@@ -97,6 +97,8 @@ class AddRecipe extends Component {
         axios.post(url, recipe)
             .then(response => {
                 alert("You've added a recipe");
+            })
+            .then(() => {
                 this.setState({redirect: true})
             })
             .catch(error =>{
@@ -141,6 +143,9 @@ class AddRecipe extends Component {
                     newIngredient={newIngredientValue.ingredientName}
                     clickedCancel={this.handleCancelEdition}
                     clickedSave={this.handleChangeIngredientName}
+                    changed={(e) => {
+                        this.setState({newIngredientValue: {...newIngredientValue, ingredientName: e.target.value}})
+                    }}
                 />
                 <div className={classes.RecipeForm}>
                     <h3>Create Your Own Recipe</h3>
