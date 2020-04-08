@@ -31,12 +31,9 @@ const Input = props => {
                 <select
                     onChange={props.changed}
                     className={inputClasses.join(' ')}
-                    value={props.value}>
-                    {props.configuration.options.map(option => {
-                        return (
-                            <option key={option.value} value={option.value}>{option.displayValue}</option>
-                        )
-                    })}
+                    value={props.value}
+                >
+                    {props.options.map(option => (<option key={option.name} value={option.name}>{option.name}</option>))}
                 </select>);
             break;
         default:

@@ -12,34 +12,6 @@
     flex-direction: column;
     justify-content: center;
   }
-    .DetailsIntro {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      h4 {
-        padding: .5rem 0;
-        font-weight: 500;
-      }
-      img {
-        width: 1.5rem;
-        height: auto;
-      }
-    }
-    .Details {
-      height: 400px;
-      overflow: auto;
-      ul {
-        margin: .5rem 0;
-        li {
-          font-size: .9rem;
-          line-height: 1.2rem;
-        }
-      }
-      p {
-        font-size: .9rem;
-        line-height: 1.2rem;
-      }
-    }
 }
 
 @media screen and (min-width: 1025px) {

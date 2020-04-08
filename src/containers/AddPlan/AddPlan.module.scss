@@ -1,0 +1,124 @@
+.Plan {
+  width: 95%;
+  font-weight: 300;
+  margin: 0 auto;
+  .PlanForm {
+    h3 {
+      margin: 1rem 0;
+      font-size: 1.08rem;
+      letter-spacing: 1px;
+    }
+    form {
+      margin: 0 auto;
+      div {
+        padding: .2rem .5rem .4rem;
+        margin: 1rem 0;
+        background-color: #fff;
+        div {
+          margin: 0;
+        }
+        &.PlanName {
+          border: .1rem solid #e7e7e7;
+          border-radius: 5px;
+          box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
+        }
+        &.PlanRecipe {
+          border: .1rem solid #e7e7e7;
+          border-radius: 5px;
+          box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
+          .RecipeDetails {
+            padding: 0;
+            display: flex;
+            align-items: flex-end;
+            select {
+              width: 100%;
+            }
+          }
+          .Recipes {
+            .Recipe {
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
+              margin: .3rem 0;
+              font-size: .8rem;
+              padding: .5rem 0;
+              border: .05rem solid #ebc2c1;
+              border-radius: 5px;
+              span {
+                width: 60%;
+                display: inline-block;
+                padding-left: .5rem;
+              }
+              .RecipeControls {
+                padding: 0;
+                img {
+                  width: 1.3rem;
+                  height: auto;
+                }
+              }
+            }
+          }
+        }
+        &.PlanDescription {
+          border: .1rem solid #e7e7e7;
+          border-radius: 5px;
+          box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
+          textarea {
+            height: 3.5rem;
+          }
+        }
+      }
+      button {
+        width: 150px;
+        margin: 1rem auto;
+      }
+    }
+  }
+  .PlanCustom {
+    width: 92%;
+    height: 73vh;
+    position: fixed;
+    top: 5rem;
+    left: .5rem;
+    background-color: #fff;
+    border: .1rem solid #e7e7e7;
+    border-radius: 5px;
+    box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
+    transition: all 0.3s ease-out;
+    .DayName {
+      margin: .5rem 1rem;
+      font-size: 1.08rem;
+    }
+    .WeekDay {
+      width: 80%;
+      margin: .5rem auto;
+      padding: .3rem;
+      border: .1rem solid #e7e7e7;
+      border-radius: 5px;
+      box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
+      display: flex;
+      justify-content: space-between;
+      h3 {
+        padding: .3rem;
+        font-size: .9rem;
+      }
+      select {
+        margin: .3rem;
+        border: .1rem solid #e7e7e7;
+        border-radius: 5px;
+        font-size: .8rem;
+        font-weight: 300;
+      }
+    }
+    .DayControls {
+      margin: 0 auto;
+      width: 50%;
+      display: flex;
+      justify-content: space-evenly;
+      img {
+        width: 2rem;
+        height: auto;
+      }
+    }
+  }
+}

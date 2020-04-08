@@ -1,18 +1,18 @@
 import React from 'react';
-import classes from "./Plus.module.scss"
-import plus from '../../../assets/plus.svg'
+import arrow from '../../../assets/arrow.svg';
+import classes from '../Plus/Plus.module.scss';
 
-const Plus = props => {
+const Arrow = props => {
     return (
         <div className={classes.Plus}>
             <img
-                src={plus}
-                alt="plus"
                 className={classes.Plus}
+                src={arrow}
+                alt="arrow"
                 onClick={props.clicked}
             />
         </div>
     );
 };
 
-export default Plus;
+export default Arrow;

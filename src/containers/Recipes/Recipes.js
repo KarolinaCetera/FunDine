@@ -23,7 +23,6 @@ class Recipes extends Component {
     }
 
     handleDeleteRecipe = (id) => {
-        console.log('działa')
         axios.delete(`https://fun-dine-app.firebaseio.com/recipes/${id}.json`)
             .then(response => {
                 this.props.onGetRecipes();
