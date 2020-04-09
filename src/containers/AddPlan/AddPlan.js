@@ -3,9 +3,8 @@ import classes from './AddPlan.module.scss';
 import axios from 'axios';
 import {Redirect} from "react-router-dom";
 import AddPlanForm from "./AddPlanForm/AddPlanForm";
-import { connect } from 'react-redux';
-import * as actions from "../../store/actions/recipesActions";
 import PlanCustom from "./PlanDisplay/PlanCustom";
+import DayItem from "./DayItem/DayItem";
 
 class AddPlan extends Component {
 
@@ -32,11 +31,15 @@ class AddPlan extends Component {
             value: ''
         },
         redirect: false,
-        tempDay: 'Monday',
-        showPlansModal: false
+        tempDay: 'Choose day',
+        showPlansModal: false,
+        createdWeek: []
     };
 
     handleDayChoice = () => {
+        if (this.state.tempDay === 'Choose day') {
+            return null
+        }
         this.setState({showPlansModal: true})
     };
 
@@ -44,20 +47,55 @@ class AddPlan extends Component {
         this.setState({showPlansModal: false})
     };
 
-    handleCreateDay = () => {
+    handleCreateDay = (dayName, dayRecipes) => {
 
-    };
+        let id = null;
+        switch (dayName) {
+            case 'Monday': id = 1;
+                break;
+            case 'Tuesday': id = 2;
+                break;
+            case 'Wednesday': id = 3;
+                break;
+            case 'Thursday': id = 4;
+                break;
+            case 'Friday': id = 5;
+                break;
+            case 'Saturday': id = 6;
+                break;
+            case 'Sunday': id = 7;
+                break;
+            default: id = 1
+        }
 
-    handleDeleteDay = (recipeToDelete) => {
-        const recipes = [...this.state.recipes];
-        const remainRecipes = recipes.filter(recipe => {
-            return recipe.id !== recipeToDelete.id
+        const updatedWeek = [...this.state.createdWeek];
+        const createdDay = {
+            id: id,
+            name: dayName,
+            recipes: dayRecipes
+        };
+        updatedWeek.push(createdDay);
+        updatedWeek.sort((a,b) => {
+            return a.id - b.id
         });
-        this.setState({recipes: remainRecipes})
+        // const updatedDays = [...this.state.planDays.day];
+        // const remainDays = updatedDays.filter(day => {
+        //     return day.name !== dayName
+        // });
+
+        this.setState({
+            showPlansModal: false,
+            createdWeek: updatedWeek
+        })
     };
 
-
-
+    handleDeleteDay = (dayToDelete) => {
+        const days = [...this.state.createdWeek];
+        const remainDays = days.filter(day => {
+            return day.name !== dayToDelete
+        });
+        this.setState({createdWeek: remainDays})
+    };
 
     handleCreatePlan = (e, plan) => {
         e.preventDefault();
@@ -80,184 +118,23 @@ class AddPlan extends Component {
 
         const plan = {
             name: this.state.planName.value,
-            days: [
-                {
-                    monday: {
-                        breakfast: {
-                            name: 'Breakfast',
-                            value: ''
-                        },
-                        secondBreakfast: {
-                            name: 'Second Breakfast',
-                            value: ''
-                        },
-                        dinner: {
-                            name: 'Dinner',
-                            value: ''
-                        },
-                        dessert: {
-                            name: 'Dessert',
-                            value: ''
-                        },
-                        supper: {
-                            name: 'Supper',
-                            value: ''
-                        }
-                    }},
-                {
-                    tuesday: {
-                        breakfast: {
-                            name: 'Breakfast',
-                            value: ''
-                        },
-                        secondBreakfast: {
-                            name: 'Second Breakfast',
-                            value: ''
-                        },
-                        dinner: {
-                            name: 'Dinner',
-                            value: ''
-                        },
-                        dessert: {
-                            name: 'Dessert',
-                            value: ''
-                        },
-                        supper: {
-                            name: 'Supper',
-                            value: ''
-                        }
-                    }},
-                {
-                    wednesday: {
-                        breakfast: {
-                            name: 'Breakfast',
-                            value: ''
-                        },
-                        secondBreakfast: {
-                            name: 'Second Breakfast',
-                            value: ''
-                        },
-                        dinner: {
-                            name: 'Dinner',
-                            value: ''
-                        },
-                        dessert: {
-                            name: 'Dessert',
-                            value: ''
-                        },
-                        supper: {
-                            name: 'Supper',
-                            value: ''
-                        }
-                    }},
-                {
-                    thursday: {
-                        breakfast: {
-                            name: 'Breakfast',
-                            value: ''
-                        },
-                        secondBreakfast: {
-                            name: 'Second Breakfast',
-                            value: ''
-                        },
-                        dinner: {
-                            name: 'Dinner',
-                            value: ''
-                        },
-                        dessert: {
-                            name: 'Dessert',
-                            value: ''
-                        },
-                        supper: {
-                            name: 'Supper',
-                            value: ''
-                        }
-                    }},
-                {
-                    friday: {
-                        breakfast: {
-                            name: 'Breakfast',
-                            value: ''
-                        },
-                        secondBreakfast: {
-                            name: 'Second Breakfast',
-                            value: ''
-                        },
-                        dinner: {
-                            name: 'Dinner',
-                            value: ''
-                        },
-                        dessert: {
-                            name: 'Dessert',
-                            value: ''
-                        },
-                        supper: {
-                            name: 'Supper',
-                            value: ''
-                        }
-                    }},
-                {
-                    saturday: {
-                        breakfast: {
-                            name: 'Breakfast',
-                            value: ''
-                        },
-                        secondBreakfast: {
-                            name: 'Second Breakfast',
-                            value: ''
-                        },
-                        dinner: {
-                            name: 'Dinner',
-                            value: ''
-                        },
-                        dessert: {
-                            name: 'Dessert',
-                            value: ''
-                        },
-                        supper: {
-                            name: 'Supper',
-                            value: ''
-                        }
-                    }},
-                {
-                    sunday: {
-                        breakfast: {
-                            name: 'Breakfast',
-                            value: ''
-                        },
-                        secondBreakfast: {
-                            name: 'Second Breakfast',
-                            value: ''
-                        },
-                        dinner: {
-                            name: 'Dinner',
-                            value: ''
-                        },
-                        dessert: {
-                            name: 'Dessert',
-                            value: ''
-                        },
-                        supper: {
-                            name: 'Supper',
-                            value: ''
-                        }
-                    }}],
+            days: this.state.createdWeek,
             description: this.state.planDescription.value
         };
 
-        // const recipes = (
-        //         <div className={classes.Recipes}>
-        //             {this.state.recipes.map(recipe => {
-        //                 return (
-        //                     <MealItem
-        //                         key={day.name}
-        //                         recipeName={recipe.recipeName}
-        //                         delete={() => this.handleDeleteDay(recipe)}
-        //                     />
-        //                 )
-        //             })}
-        //         </div>
-        //     );
+        const days = (
+                <div className={classes.Days}>
+                    {this.state.createdWeek.map(day => {
+                        return (
+                            <DayItem
+                                key={day.name}
+                                dayName={day.name}
+                                delete={() => this.handleDeleteDay(day.name)}
+                            />
+                        )
+                    })}
+                </div>
+            );
 
         let planRedirect = null;
         if (this.state.redirect) {
@@ -271,6 +148,7 @@ class AddPlan extends Component {
                     selectedDay={this.state.tempDay}
                     show={this.state.showPlansModal}
                     onHide={this.handleCancelDay}
+                    onAddDay={this.handleCreateDay}
                 />
                 <div className={classes.PlanForm}>
                     <h3>Create Your Own Plan</h3>
@@ -297,7 +175,7 @@ class AddPlan extends Component {
                             });
                         }}
                         onChooseDay={this.handleDayChoice}
-                        // recipes={recipes}
+                        days={days}
 
                         planDescription={this.state.planDescription.value}
                         descriptionElementType={this.state.planDescription.elementType}
@@ -312,16 +190,4 @@ class AddPlan extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        recipes: state.recipes.recipes
-    }
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onGetRecipes: () => dispatch(actions.getRecipes())
-    }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(AddPlan);
+export default AddPlan;

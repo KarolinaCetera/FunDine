@@ -22,37 +22,34 @@
           border-radius: 5px;
           box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
         }
-        &.PlanRecipe {
+        &.PlanDays {
           border: .1rem solid #e7e7e7;
           border-radius: 5px;
           box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
-          .RecipeDetails {
+          .DayDetails {
             padding: 0;
             display: flex;
             align-items: flex-end;
-            select {
-              width: 100%;
-            }
           }
-          .Recipes {
-            .Recipe {
+          .Days {
+            width: 90%;
+            .Day {
               display: flex;
               align-items: center;
-              justify-content: space-evenly;
+              justify-content: space-between;
               margin: .3rem 0;
               font-size: .8rem;
-              padding: .5rem 0;
+              padding: .5rem;
               border: .05rem solid #ebc2c1;
               border-radius: 5px;
               span {
-                width: 60%;
+                font-size: 1.1rem;
                 display: inline-block;
-                padding-left: .5rem;
               }
-              .RecipeControls {
+              .DayControls {
                 padding: 0;
                 img {
-                  width: 1.3rem;
+                  width: 1.5rem;
                   height: auto;
                 }
               }
@@ -76,7 +73,8 @@
   }
   .PlanCustom {
     width: 92%;
-    height: 73vh;
+    height: 75vh;
+    padding: .7rem 0 .2rem;
     position: fixed;
     top: 5rem;
     left: .5rem;
@@ -98,11 +96,13 @@
       box-shadow: 0 0 16px -3px rgba(0,0,0,0.20);
       display: flex;
       justify-content: space-between;
+      align-items: center;
       h3 {
         padding: .3rem;
         font-size: .9rem;
       }
       select {
+        background-color: #fff;
         margin: .3rem;
         border: .1rem solid #e7e7e7;
         border-radius: 5px;
@@ -118,6 +118,148 @@
       img {
         width: 2rem;
         height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 767px) {
+  .Plan {
+    .PlanCustom {
+      height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      .DayName {
+        margin: .5rem 1.5rem;
+        font-size: 1.3rem;
+      }
+
+      .WeekDay {
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        select {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .Plan {
+    .PlanForm {
+      h3 {
+        font-size: 2rem;
+      }
+      form {
+        div {
+          &.PlanDays {
+            .Days {
+              width: 95%;
+              margin: 0 auto;
+              .Day {
+                padding: 1rem .5rem;
+                span {
+                  font-size: 1.8rem;
+                }
+                .DayControls {
+                  padding: 0;
+                  img {
+                    width: 2.5rem;
+                    height: auto;
+                  }
+                }
+              }
+            }
+          }
+          &.PlanDescription {
+            textarea {
+              height: 8rem;
+            }
+          }
+        }
+        button {
+          font-size: 1.5rem;
+          font-weight: 300;
+        }
+      }
+    }
+    .PlanCustom {
+      width: 60%;
+      height: 700px;
+      left: 20%;
+      .DayName {
+        margin: 1rem 2rem;
+        font-size: 1.5rem;
+      }
+      .WeekDay {
+        margin: 1rem auto;
+        padding: .6rem .3rem;
+        h3 {
+          font-size: 1.4rem;
+        }
+        select {
+          padding: .5rem 0;
+          margin: .3rem;
+          font-size: .8rem;
+        }
+      }
+      .DayControls {
+        img {
+          width: 3rem;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .Plan {
+    width: 95%;
+    font-weight: 300;
+    margin: 0 auto;
+    .PlanForm {
+      width: 35%;
+      h3 {
+        font-size: 1.6rem;
+      }
+      form {
+        div {
+          &.PlanDays {
+            align-items: center;
+            .DayDetails {
+              padding: 0;
+              display: flex;
+              align-items: flex-end;
+            }
+          }
+          &.PlanDescription {
+            textarea {
+              height: 6rem;
+            }
+          }
+        }
+      }
+    }
+    .PlanCustom {
+      width: 500px;
+      height: 60vh;
+      top: 7.5rem;
+      left: 50%;
+      background-color: #fff;
+      .DayName {
+        margin: .5rem 2rem;
+      }
+      .DayControls {
+        margin: 1rem auto;
+        img {
+          margin: 0 .5rem;
+        }
       }
     }
   }

@@ -6,9 +6,13 @@
 
 <p>This app emerged from everyday struggle. No more excuses - just creat recipe, add it to week plan and track your meals with easy display.</p>
 
-<h3>App under construction... But what's already made?</h3>
-<p>April 6th: adding recipe</p>
-<p>April 7th: displaying recipe</p>
+<h3>App under construction... But what's already done?</h3>
+<ul>
+<li>User authentication</li>
+<li>April 6th: adding recipe</li>
+<li>April 7th: displaying recipes</li>
+<li>April 9th: adding plans</li>
+</ul>
 
 <h3>Technologies</h3>
 <ul>

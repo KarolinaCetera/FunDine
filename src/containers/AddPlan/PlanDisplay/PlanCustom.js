@@ -12,12 +12,24 @@ class PlanCustom extends Component {
             {id: 3, name: 'Dinner', value: ''},
             {id: 4, name: 'Dessert', value: ''},
             {id: 5, name: 'Supper', value: ''}
-        ]
+        ],
+        dayRecipes: []
+    };
+
+    handleGetMealRecipe = (mealName, recipe) => {
+        const updatedDayRecipes = [...this.state.dayRecipes];
+
+        const meal = {
+                name: mealName,
+                recipe: recipe
+         };
+
+         updatedDayRecipes.push(meal);
+         this.setState({dayRecipes: updatedDayRecipes})
     };
 
     render() {
-        const { meals } = this.state;
-
+        const { meals, dayRecipes } = this.state;
 
         return (
             <div
@@ -33,10 +45,11 @@ class PlanCustom extends Component {
                         key={meal.id}
                         mealName={meal.name}
                         show={this.props.show}
+                        onAddRecipe={this.handleGetMealRecipe}
                     />
                 ))}
                 <div className={classes.DayControls}>
-                    <img src={Success} alt="success"/>
+                    <img src={Success} alt="success" onClick={() => this.props.onAddDay(this.props.selectedDay, dayRecipes)}/>
                     <img src={Delete} alt="delete" onClick={this.props.onHide}/>
                 </div>
             </div>

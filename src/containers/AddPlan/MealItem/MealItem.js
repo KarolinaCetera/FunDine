@@ -27,9 +27,8 @@ class MealItem extends Component {
             })
     }
 
-    //na onChange wysłanie do komponentu wyżej displayedRecipe
-
     render() {
+
         return (
             <div className={classes.WeekDay}>
                 <h3>{this.props.mealName}</h3>
@@ -37,8 +36,10 @@ class MealItem extends Component {
                     value={this.state.displayedRecipe}
                     onChange={(e) => {
                         this.setState({displayedRecipe: e.target.value})
+                        this.props.onAddRecipe(this.props.mealName, e.target.value )
                     }}
                 >
+                    <option value="Choose your recipe">Choose recipe</option>
                     {this.state.recipes.map(recipe => (
                         <option key={recipe.id} value={recipe.name}>{recipe.name}</option>
                     ))}

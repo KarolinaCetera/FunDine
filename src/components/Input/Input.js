@@ -33,6 +33,7 @@ const Input = props => {
                     className={inputClasses.join(' ')}
                     value={props.value}
                 >
+                    <option value="displayed">{props.displaydValue}</option>
                     {props.options.map(option => (<option key={option.name} value={option.name}>{option.name}</option>))}
                 </select>);
             break;

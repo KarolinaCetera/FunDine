@@ -15,18 +15,19 @@ const AddPlanForm = props => {
                     changed={props.nameChanged}
                 />
             </div>
-            <div className={classes.PlanRecipe}>
-                <div className={classes.RecipeDetails}>
+            <div className={classes.PlanDays}>
+                <div className={classes.DayDetails}>
                     <Input
                         value={props.dayValue}
                         elementType={props.dayElementType}
                         label="Recipes"
                         changed={props.recipesChanged}
                         options={props.dayOptions}
+                        displaydValue="Choose day"
                     />
                     <Arrow clicked={props.onChooseDay}/>
                 </div>
-                {props.recipes}
+                {props.days}
             </div>
             <div className={classes.PlanDescription}>
                 <Input
