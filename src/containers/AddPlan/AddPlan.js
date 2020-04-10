@@ -78,23 +78,37 @@ class AddPlan extends Component {
         updatedWeek.sort((a,b) => {
             return a.id - b.id
         });
-        // const updatedDays = [...this.state.planDays.day];
-        // const remainDays = updatedDays.filter(day => {
-        //     return day.name !== dayName
-        // });
+        const updatedDays = [...this.state.planDays.day];
+        const remainDays = updatedDays.filter(day => {
+            return day.name !== dayName
+        });
 
         this.setState({
+            planDays: {
+                ...this.state.planDays,
+                day: remainDays
+            },
             showPlansModal: false,
             createdWeek: updatedWeek
         })
     };
 
-    handleDeleteDay = (dayToDelete) => {
+    handleDeleteDay = (dayToDelete, day) => {
         const days = [...this.state.createdWeek];
+        const displayedDays = [...this.state.planDays.day];
+        console.log(displayedDays)
         const remainDays = days.filter(day => {
             return day.name !== dayToDelete
         });
-        this.setState({createdWeek: remainDays})
+
+        displayedDays.push(day);
+        const daysToShow = displayedDays.sort((a,b) => {
+            return a.id - b.id
+        });
+        this.setState({planDays:{
+            ...this.state.planDays,
+                day: daysToShow
+            }, createdWeek: remainDays})
     };
 
     handleCreatePlan = (e, plan) => {
@@ -129,7 +143,8 @@ class AddPlan extends Component {
                             <DayItem
                                 key={day.name}
                                 dayName={day.name}
-                                delete={() => this.handleDeleteDay(day.name)}
+                                day={day}
+                                delete={() => this.handleDeleteDay(day.name, day)}
                             />
                         )
                     })}
